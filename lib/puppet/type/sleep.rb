@@ -32,6 +32,11 @@ Puppet::Type.newtype(:sleep) do
     defaultto { :false }
   end
 
+  newparam(:failontimeout) do
+    desc "what to wake up for - a shell test for example"
+    defaultto { :true }
+  end
+
   newparam(:dozetime) do
     desc "where wakeupfor set, optional parameter to determine how often to run the test"
     defaultto { 60 }

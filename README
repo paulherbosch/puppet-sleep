@@ -19,6 +19,5 @@ Period to sleep to between testing whether we should return
       bedtime   => 600,                          # how long to sleep for
       wakeupfor => '/usr/bin/test -f /tmp/tard', # an optional test, run in a shell
       dozetime  => 10,                           # dozetime for the test interval, defaults to 10s
+      failontimeout => false,                    # whether to fail the resource if the test times out
     }
-
-
