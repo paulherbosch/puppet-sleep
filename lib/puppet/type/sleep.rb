@@ -34,7 +34,10 @@ Puppet::Type.newtype(:sleep) do
 
   newparam(:dozetime) do
     desc "where wakeupfor set, optional parameter to determine how often to run the test"
-    defaultto { 10 }
+    defaultto { @resource[:bedtime] }
+    munge do |zzzz|
+      Integer(zzzz)
+    end
   end
 
 end
