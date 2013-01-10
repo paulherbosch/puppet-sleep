@@ -1,1 +1,24 @@
 This is a puppet module to provide a sleep type and provider for posix systems
+____
+
+Parameters:
+
+bedtime:
+
+Total potential time to sleep for
+
+wakeupfor:
+
+An optional test which will exit the sleep, runs every 10s, or as defined by...
+
+dozetime:
+
+Period to sleep to between testing whether we should return
+
+    sleep { "wait for something to happen":
+      bedtime   => 600,                          # how long to sleep for
+      wakeupfor => '/usr/bin/test -f /tmp/tard', # an optional test, run in a shell
+      dozetime  => 10,                           # dozetime for the test interval, defaults to 10s
+    }
+
+
