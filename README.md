@@ -15,6 +15,10 @@ dozetime:
 
 Period to sleep to between testing whether we should return
 
+failontimeout: 
+
+whether to fail the resource if the test never succeeds by the timeout - default false
+
     sleep { 'until i need to wake up':
       bedtime       => 300,                              # how long to sleep for
       wakeupfor     => 'nc thedatabaseserver 3306 -w 1', # an optional test, run in a shell
