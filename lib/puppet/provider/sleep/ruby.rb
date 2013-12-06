@@ -13,7 +13,7 @@ Puppet::Type.type(:sleep).provide(:ruby) do
       until tested or timedout
         command = "/bin/sh -c '#{resource[:wakeupfor]}'"
         debug("Running test: #{command}")
-        output = Puppet::Util.execute(command, :failonfail => false, :combine => true)
+        output = Puppet::Util::Execution.execute(command, :failonfail => false, :combine => true)
         debug("The test returned: #{$CHILD_STATUS} #{output}")
         tested = true if $CHILD_STATUS == 0
         debug("Tested is: #{tested}")
