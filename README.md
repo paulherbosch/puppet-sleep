@@ -1,23 +1,17 @@
-This is a puppet module to provide a sleep type and provider for posix systems
+This is a puppet module to provide a sleep type and provider for posix and Windows systems
 ____
 
 Parameters:
 
-bedtime:
+    bedtime: Total potential time to sleep for
 
-Total potential time to sleep for
+    wakeupfor: An optional test which will exit the sleep, runs every 10s, or as defined by...
 
-wakeupfor:
+    dozetime: Period to sleep to between testing whether we should return
 
-An optional test which will exit the sleep, runs every 10s, or as defined by...
+    failontimeout: whether to fail the resource if the test never succeeds by the timeout - default false
 
-dozetime:
-
-Period to sleep to between testing whether we should return
-
-failontimeout: 
-
-whether to fail the resource if the test never succeeds by the timeout - default false
+Sample code:
 
     sleep { 'until i need to wake up':
       bedtime       => 300,                              # how long to sleep for
