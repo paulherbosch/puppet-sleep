@@ -1,6 +1,8 @@
 This is a puppet module to provide a sleep type and provider for posix and Windows systems
 ____
 
+Defaults to refreshonly => true
+
 Parameters:
 
     bedtime: Total potential time to sleep for
