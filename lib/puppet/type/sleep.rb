@@ -90,4 +90,8 @@ Puppet::Type.newtype(:sleep) do
     true
   end
 
+  def refresh
+    self.property(:bedtime).sync
+  end
+
 end
