@@ -21,7 +21,7 @@ Puppet::Type.type(:sleep).provide(:ruby) do
         debug("Tested is: #{tested} calculated from #{starttime + snoretime} vs #{Time.now.to_i}")
         debug("Been running for #{Time.now.to_i - starttime} seconds")
         debug("Sleeping again")
-        sleep(resource[:dozetime])
+        sleep(resource[:dozetime]) unless tested
       end
       @resource.fail if timedout and resource[:failontimeout] == true
     end
