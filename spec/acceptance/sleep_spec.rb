@@ -5,7 +5,7 @@ describe 'sleep' do
   describe 'running puppet code' do
     it 'should work with no errors' do
       pp = <<-EOS
-        include sleep 
+        # include sleep 
 
         sleep { 5: }
 
